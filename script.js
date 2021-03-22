@@ -7,12 +7,16 @@ const btnEmpezar = document.getElementById('btn-iniciar');
 class Juego {
     constructor() {
         this.inicializar();
+        this.generarSecuencia();
     }
     inicializar() {
         btnEmpezar.classList.add('hide');
     }
+    generarSecuencia() {
+        this.secuencia = new Array(10).fill(0).map(n => Math.floor(Math.random() * 4));
+    }
 }
 
 function EmpezarJuego() {
-    var juego = new Juego();
+    window.juego = new Juego();
 }
